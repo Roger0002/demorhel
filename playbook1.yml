@@ -1,7 +1,7 @@
 # Read a CSV file and access user 'dag'
 ---
 - name: Teste de CSV
-  hosts: server
+  hosts: gerenciado
   become: yes
   tasks:
   - name: "Read users from CSV file and return a dictionary"
