@@ -1,5 +1,6 @@
 ---
 - name: Teste de ping
+  hosts: gerenciado
   tasks:
   - name: "ping"
     ping:
