@@ -6,12 +6,7 @@
       yum:
         name: dhcp
         state: latest
-#    - name: Iniciar e habilitar o daemon DHCP
-#      service:
-#        name: dhcpd
-#        state: started
-#        enabled: yes
-   
+
     - name: "Read users from CSV file and return a dictionary"
       read_csv:
         path: /desafio_rhel/machines.csv
@@ -29,18 +24,6 @@
         mode: 0640
       notify: "Reiniciar o dhcp"
 
-#    - debug:
-#      msg: 'Machine {{ machines.list.3.HOSTNAME }} has IP {{ machines.list.3.IP }} and MAC {{ machines.list.3.MAC }}'
-    
-#    - name: Copia index.html para /var/www/html
-#      copy:
-#        src: /desafio_rhel/index.html
-#        dest: /var/www/html
-#        owner: apache
-#        group: apache
-#        mode: 0644
-#        remote_src: no
-#      notify: "Reiniciar o Apache"
   handlers:
     - name: "Reinicialização do DHCP Server"
       service:
