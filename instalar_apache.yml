@@ -9,7 +9,7 @@
       service:
         name: httpd
         state: started
-        enable: yes
+        enabled: yes
     - name: Copia index.html para /var/www/html
       copy:
         src: /root/desafio_rhel/index.html
