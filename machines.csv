@@ -1,0 +1,4 @@
+HOSTNAME,IP,MAC
+thorserv,192.168.100.210,aa:bb:cc:dd:ee:f1
+ironserv,192.168.100.219,aa:bb:cc:dd:ee:f2
+capserv,192.168.100.233,aa:bb:cc:dd:ee:f3
