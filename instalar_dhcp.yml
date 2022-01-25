@@ -6,11 +6,11 @@
       yum:
         name: dhcp
         state: latest
-    - name: Iniciar e habilitar o daemon DHCP
-      service:
-        name: dhcpd
-        state: started
-        enabled: yes
+#    - name: Iniciar e habilitar o daemon DHCP
+#      service:
+#        name: dhcpd
+#        state: started
+#        enabled: yes
    
     - name: "Read users from CSV file and return a dictionary"
       read_csv:
