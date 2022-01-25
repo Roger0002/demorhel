@@ -11,6 +11,26 @@
         name: dhcpd
         state: started
         enabled: yes
+   
+    - name: "Read users from CSV file and return a dictionary"
+      read_csv:
+        path: /desafio_rhel/machines.csv
+        fieldnames: HOSTNAME,IP,MAC
+        delimiter: ','
+      register: machines
+
+    - name: "Copia o arquivo dhcpd.conf com os IPs host corretos"
+      template:
+	      src: /desafio_rhel/dhcpd.j2
+		    dest: /etc/dhcp/dhcpd.conf
+		    owner: root
+		    group: root
+		    mode: 0640
+      notify:
+        - "Reiniciar o Apache"
+
+#    - debug:
+#      msg: 'Machine {{ machines.list.3.HOSTNAME }} has IP {{ machines.list.3.IP }} and MAC {{ machines.list.3.MAC }}'
     
 #    - name: Copia index.html para /var/www/html
 #      copy:
