@@ -2,7 +2,6 @@
 ---
 - name: Teste de CSV
   hosts: gerenciado
-  become: yes
   tasks:
   - name: "Read users from CSV file and return a dictionary"
     read_csv:
