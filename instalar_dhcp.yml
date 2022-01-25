@@ -26,7 +26,7 @@
         owner: root
         group: root
         mode: 0640
-      notify: "Reiniciar o Apache"
+      notify: "Reiniciar o dhcp"
 
 #    - debug:
 #      msg: 'Machine {{ machines.list.3.HOSTNAME }} has IP {{ machines.list.3.IP }} and MAC {{ machines.list.3.MAC }}'
@@ -45,4 +45,4 @@
       service:
         name: dhcpd
         state: restarted
-      listen: "Reiniciar o Apache"
+      listen: "Reiniciar o dhcp"
