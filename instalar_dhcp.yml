@@ -18,6 +18,7 @@
         fieldnames: HOSTNAME,IP,MAC
         delimiter: ','
       register: machines
+      delegate_to: localhost
 
     - name: "Copia o arquivo dhcpd.conf com os IPs host corretos"
       template:
