@@ -1,6 +1,5 @@
 ---
 - hosts: gerenciado
-  become: yes
   tasks:
     - name: Instalar o apache
       yum:
