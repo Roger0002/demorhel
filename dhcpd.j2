@@ -1,0 +1,28 @@
+subnet 192.168.100.0 netmask 255.255.255.0 {
+  range 192.168.100.205 192.168.100.240;
+  option domain-name-servers 192.168.100.201, 192.168.100.202;
+  option domain-name "nodomain.net";
+  option routers 192.168.100.1;
+  option broadcast-address 192.168.100.255;
+  default-lease-time 600;
+  max-lease-time 7200;
+
+host {{ machines.list.1.HOSTNAME }} {
+  hardware ethernet {{ machines.list.1.MAC }};
+  filename "vmunix.{{ machines.list.1.HOSTNAME }}";
+  server-name "{{ machines.list.1.IP }}";
+}
+
+host {{ machines.list.2.HOSTNAME }} {
+  hardware ethernet {{ machines.list.2.MAC }};
+  filename "vmunix.{{ machines.list.2.HOSTNAME }}";
+  server-name "{{ machines.list.2.IP }}";
+}
+
+host {{ machines.list.3.HOSTNAME }} {
+  hardware ethernet {{ machines.list.3.MAC }};
+  filename "vmunix.{{ machines.list.3.HOSTNAME }}";
+  server-name "{{ machines.list.3.IP }}";
+}
+
+}
