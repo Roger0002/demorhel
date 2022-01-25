@@ -1,0 +1,29 @@
+---
+- hosts: gerenciado
+  become: yes
+  tasks:
+    - name: Instalar o servidor DHCP
+      yum:
+        name: dhcp
+        state: latest
+    - name: Iniciar e habilitar o daemon DHCP
+      service:
+        name: dhcpd
+        state: started
+        enabled: yes
+    
+#    - name: Copia index.html para /var/www/html
+#      copy:
+#        src: /desafio_rhel/index.html
+#        dest: /var/www/html
+#        owner: apache
+#        group: apache
+#        mode: 0644
+#        remote_src: no
+#      notify: "Reiniciar o Apache"
+  handlers:
+    - name: "Reinicialização do DHCP Server"
+      service:
+        name: dhcpd
+        state: restarted
+      listen: "Reiniciar o Apache"
