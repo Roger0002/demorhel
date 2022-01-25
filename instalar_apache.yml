@@ -12,7 +12,7 @@
         enabled: yes
     - name: Copia index.html para /var/www/html
       copy:
-        src: /root/desafio_rhel/index.html
+        src: /desafio_rhel/index.html
         dest: /var/www/html
         owner: apache
         group: apache
