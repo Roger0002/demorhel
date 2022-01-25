@@ -21,13 +21,12 @@
 
     - name: "Copia o arquivo dhcpd.conf com os IPs host corretos"
       template:
-	      src: /desafio_rhel/dhcpd.j2
-		    dest: /etc/dhcp/dhcpd.conf
-		    owner: root
-		    group: root
-		    mode: 0640
-      notify:
-        - "Reiniciar o Apache"
+        src: /desafio_rhel/dhcpd.j2
+	dest: /etc/dhcp/dhcpd.conf
+	owner: root
+	group: root
+	mode: 0640
+      notify: "Reiniciar o Apache"
 
 #    - debug:
 #      msg: 'Machine {{ machines.list.3.HOSTNAME }} has IP {{ machines.list.3.IP }} and MAC {{ machines.list.3.MAC }}'
