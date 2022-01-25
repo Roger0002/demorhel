@@ -8,7 +8,7 @@
 
     - name: "Read users from CSV file and return a dictionary"
       read_csv:
-        path: /desafio_rhel/machines.csv
+        path: machines.csv
         fieldnames: HOSTNAME,IP,MAC
         delimiter: ','
       register: machines
@@ -16,7 +16,7 @@
 
     - name: "Copia o arquivo dhcpd.conf com os IPs host corretos"
       template:
-        src: /desafio_rhel/dhcpd.j2
+        src: dhcpd.j2
         dest: /etc/dhcp/dhcpd.conf
         owner: root
         group: root
