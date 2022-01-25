@@ -17,3 +17,10 @@
         owner: apache
         group: apache
         mode: 0644
+      notify: "Reiniciar o Apache"
+  handlers:
+    - name: "Reinicialização do apache"
+      service:
+        name: httpd
+        state: restarted
+      listen: "Reiniciar o Apache"
