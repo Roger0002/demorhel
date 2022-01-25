@@ -17,6 +17,7 @@
         owner: apache
         group: apache
         mode: 0644
+        remote_src: no
       notify: "Reiniciar o Apache"
   handlers:
     - name: "Reinicialização do apache"
