@@ -2,18 +2,18 @@
 - hosts: gerenciado
   tasks:
     - name: Instalar o apache
-	  yum:
-	    name: httpd
-		state: latest
-	- name: Iniciar e habilitar o módulo httpd
-	  service:
-	    name: httpd
-		state: started
-		enables: yes
-	- name: Copia index.html para /var/www/html
-	  copy:
-	    src: /root/desafio_rhel/index.html
+      yum:
+        name: httpd
+        state: latest
+    - name: Iniciar e habilitar o módulo httpd
+      service:
+        name: httpd
+	state: started
+	enables: yes
+    - name: Copia index.html para /var/www/html
+      copy:
+        src: /root/desafio_rhel/index.html
         dest: /var/www/html
-		owner: apache
-		group: apache
-		mode: 0644
+	owner: apache
+	group: apache
+	mode: 0644
